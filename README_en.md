@@ -1,15 +1,15 @@
 ### <p align="center">loadbalance</p>
-#### <p align="center">随机、轮训、权重、哈希负载均衡</p>
+#### <p align="center">Random, round-robin, weighted, hash load balancing</p>
 #### <p align="center"><a href="https://github.com/jeffcail/loadbalance/releases"><img src="https://img.shields.io/github/release/loadbalance/releases.svg" alt="GitHub release"></a><a href="https://github.com/jeffcail/loadbalance/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a><p>
-#### <p align="center"><a href="./README.md" target="_blank">简体中文</a> | <a href="./README_en.md" target="_blank">English</a> </p>
+#### <p align="center"><a href="./README.md" target="_blank">Simplified Chinese</a> | <a href="./README_en.md" target="_blank">English</a> </p>
 
-### 安装
+### Install
 ```shell
 go get github.com/jeffcail/loadbalance
 ```
 
 ### E.g
-#### 1. 随机
+#### 1. random
 ```go
 r := &RandomBalancing{}
 r.Add("127.0.0.1:2003")
@@ -30,7 +30,7 @@ fmt.Println(r.Next())
 ```
 <img src="./random-load.png">
 
-#### 2.轮训
+#### 2.Rotation Training
 ```go
 r := &RoundRotationBalance{}
 r.Add("127.0.0.1:2003")
@@ -52,7 +52,7 @@ fmt.Println(r.Next())
 ```
 <img src="./rotation-load.png">
 
-#### 3.权重
+#### 3.weight
 ```go
 r := &WeightBalance{}
 r.Add("127.0.0.1:2003", "4")
@@ -73,7 +73,7 @@ fmt.Println(r.Next())
 ```
 <img src="./weighted-load.png">
 
-#### 4. 一致性hash
+#### 4. Consistent hashing
 ```go
 r := NewConsistentHashBalance(10, nil)
 r.Add("127.0.0.1:2003")

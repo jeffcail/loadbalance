@@ -1,4 +1,4 @@
-package weighted_load
+package weighted
 
 import (
 	"errors"

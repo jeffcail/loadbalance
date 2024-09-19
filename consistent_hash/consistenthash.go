@@ -1,4 +1,4 @@
-package consistent_hash_load
+package consistent_hash
 
 import (
 	"errors"

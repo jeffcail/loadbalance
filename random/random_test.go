@@ -1,18 +1,18 @@
-package weighted_load
+package random
 
 import (
 	"fmt"
 	"testing"
 )
 
-func TestWeightBalance(t *testing.T) {
-	r := &WeightBalance{}
-	r.Add("127.0.0.1:2003", "4")
-	r.Add("127.0.0.1:2004", "3")
-	r.Add("127.0.0.1:2005", "2")
+func TestRandomBalancing(t *testing.T) {
+	r := &RandomBalancing{}
+	r.Add("127.0.0.1:2003")
+	r.Add("127.0.0.1:2004")
+	r.Add("127.0.0.1:2005")
+	r.Add("127.0.0.1:2006")
+	r.Add("127.0.0.1:2007")
 
-	fmt.Println(r.Next())
-	fmt.Println(r.Next())
 	fmt.Println(r.Next())
 	fmt.Println(r.Next())
 	fmt.Println(r.Next())

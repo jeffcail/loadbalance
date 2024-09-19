@@ -1,18 +1,17 @@
-package rotation_load
+package weighted
 
 import (
 	"fmt"
 	"testing"
 )
 
-func TestRoundRotationBalance(t *testing.T) {
-	r := &RoundRotationBalance{}
-	r.Add("127.0.0.1:2003")
-	r.Add("127.0.0.1:2004")
-	r.Add("127.0.0.1:2005")
-	r.Add("127.0.0.1:2006")
-	r.Add("127.0.0.1:2007")
+func TestWeightBalance(t *testing.T) {
+	r := &WeightBalance{}
+	r.Add("127.0.0.1:2003", "4")
+	r.Add("127.0.0.1:2004", "3")
+	r.Add("127.0.0.1:2005", "2")
 
+	fmt.Println(r.Next())
 	fmt.Println(r.Next())
 	fmt.Println(r.Next())
 	fmt.Println(r.Next())

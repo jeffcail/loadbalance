@@ -1,4 +1,4 @@
-package random_load
+package random
 
 import (
 	"errors"

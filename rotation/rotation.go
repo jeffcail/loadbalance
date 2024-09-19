@@ -1,4 +1,4 @@
-package rotation_load
+package rotation
 
 import "errors"
 
